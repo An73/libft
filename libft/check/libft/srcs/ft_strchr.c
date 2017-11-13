@@ -6,7 +6,7 @@
 /*   By: dkotenko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 16:16:52 by dkotenko          #+#    #+#             */
-/*   Updated: 2017/11/07 22:15:44 by dkotenko         ###   ########.fr       */
+/*   Updated: 2017/11/12 17:03:53 by dkotenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char *str, int ch)
 	char		*temp;
 
 	temp = (char*)str;
-	while (*temp /*!= '\0'*/)
+	while (*temp)
 	{
 		if (*temp == ch)
 			return (temp);

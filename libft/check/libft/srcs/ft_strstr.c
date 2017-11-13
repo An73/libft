@@ -6,7 +6,7 @@
 /*   By: dkotenko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/27 18:17:56 by dkotenko          #+#    #+#             */
-/*   Updated: 2017/11/08 14:29:29 by dkotenko         ###   ########.fr       */
+/*   Updated: 2017/11/12 17:07:30 by dkotenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@ char	*ft_strstr(const char *big, const char *little)
 {
 	const char	*big_new;
 	const char	*little_new;
+
 	while (*big != '\0')
 	{
 		big_new = big;
@@ -29,5 +30,5 @@ char	*ft_strstr(const char *big, const char *little)
 	}
 	if (*little == '\0')
 		return ((char*)big);
-	return(0);
+	return (0);
 }

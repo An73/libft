@@ -12,11 +12,28 @@
 
 #include <stdlib.h>
 
-char	*ft_itoa(int n)
+static char		*str_ret(unsigned int num, int i, char *str)
 {
-	int		i;
+	while (num)
+	{
+		str[i--] = 48 + (num % 10);
+		num = num / 10;
+	}
+	return (str);
+}
+
+static char		*str_null(char *str)
+{
+	str = (char*)malloc(2);
+	str = "0";
+	return (str);
+}
+
+char			*ft_itoa(int n)
+{
+	int					i;
 	unsigned int		num;
-	char	*str;
+	char				*str;
 
 	i = 0;
 	num = (unsigned int)n;
@@ -26,11 +43,7 @@ char	*ft_itoa(int n)
 		i = 1;
 	}
 	if (num == 0)
-	{
-		str = (char*)malloc(2);
-		str = "0";
-		return (str);
-	}
+		return (str_null(str));
 	while (n)
 	{
 		n = n / 10;
@@ -41,10 +54,5 @@ char	*ft_itoa(int n)
 		return (NULL);
 	str[0] = '-';
 	str[i--] = '\0';
-	while (num)
-	{
-		str[i--] = 48 + (num % 10);
-		num = num / 10;
-	}
-	return (str);
+	return (str_ret(num, i, str));
 }

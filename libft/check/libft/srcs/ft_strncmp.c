@@ -20,7 +20,9 @@ int		ft_strncmp(char *s1, char *s2, size_t n)
 
 	index1 = 0;
 	index2 = 0;
-	while (s1[index1] == s2[index2] && index1 < (int)n)
+	if (n <= 0)
+		return (0);
+	while (s1[index1] == s2[index2] && index1 < (int)(n - 1))
 	{
 		index1++;
 		index2++;

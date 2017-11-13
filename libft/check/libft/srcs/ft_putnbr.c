@@ -6,13 +6,12 @@
 /*   By: dkotenko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/30 20:04:48 by dkotenko          #+#    #+#             */
-/*   Updated: 2017/10/30 20:21:36 by dkotenko         ###   ########.fr       */
+/*   Updated: 2017/11/12 21:56:59 by dkotenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-
-void	ft_putchar(char c);
+#include "libft.h"
 
 void	ft_putnbr(int n)
 {

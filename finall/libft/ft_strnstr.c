@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <string.h>
-#include <libft.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
@@ -19,6 +19,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	const char	*little_new;
 	size_t		len_str;
 
+	if (*little == '\0')
+		return ((char*)big);
 	len_str = ft_strlen((char*)little);
 	while (*big != '\0' && len >= len_str)
 	{
@@ -34,7 +36,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		big++;
 		len--;
 	}
-	if (*little == '\0')
-		return ((char*)big);
 	return (0);
 }

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
 
 static char		*ft_strcpy_split(char *dest, const char *src, char c)
 {
@@ -24,9 +23,9 @@ static char		*ft_strcpy_split(char *dest, const char *src, char c)
 	return (str);
 }
 
-static int		sym(char *s, char c)
+static size_t	sym(char *s, char c)
 {
-	int		i;
+	size_t		i;
 
 	i = 0;
 	while (*s != '\0')
@@ -73,10 +72,10 @@ char			**ft_strsplit(char const *s, char c)
 	int		j;
 
 	j = 0;
-	if (s && c)
+	if (s)
 	{
 		str = (char*)s;
-		if (!(array = (char**)malloc(sizeof(char*) * word(str, c) + 1)))
+		if (!(array = (char**)malloc(sizeof(char*) * (word(str, c) + 1))))
 			return (NULL);
 		while (array)
 		{
@@ -86,10 +85,10 @@ char			**ft_strsplit(char const *s, char c)
 				return (array_ray(array, j));
 			array[j] = (char*)malloc(sizeof(char) * (sym(str, c) + 1));
 			array[j] = ft_strcpy_split(array[j], str, c);
+			array[j++ + 1] = NULL;
 			while (*str != c)
 				if (*str++ == '\0')
 					return (array);
-			j++;
 		}
 	}
 	return (NULL);

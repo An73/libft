@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strtolower.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dkotenko <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/27 18:17:56 by dkotenko          #+#    #+#             */
-/*   Updated: 2017/11/12 17:07:30 by dkotenko         ###   ########.fr       */
+/*   Created: 2017/11/15 15:02:36 by dkotenko          #+#    #+#             */
+/*   Updated: 2017/11/15 15:02:38 by dkotenko         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(const char *big, const char *little)
+char	*ft_strtolower(char *str)
 {
-	const char	*big_new;
-	const char	*little_new;
+	int		i;
 
-	if (*little == '\0')
-		return ((char*)big);
-	while (*big != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		big_new = big;
-		little_new = little;
-		while (*little_new != '\0' && *little_new == *big_new)
-		{
-			little_new++;
-			big_new++;
-		}
-		if (*little_new == '\0')
-			return ((char*)big);
-		big++;
+		if (str[i] >= 65 && str[i] <= 90)
+			str[i] = str[i] + 32;
+		i++;
 	}
-	return (0);
+	return (str);
 }
